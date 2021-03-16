@@ -9,18 +9,16 @@ import {
 import { createStackNavigator } from '@react-navigation/stack'
 import { AppearanceProvider, useColorScheme } from 'react-native-appearance'
 import DT from './darkTheme'
+import homeScreen from './src/screens/homeScreen'
 
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontSize: 30 }}>This is the home screen!</Text>
-      <Button
-        onPress={() => navigation.navigate('MyModal')}
-        title='Open Modal'
-      />
+      <Button onPress={() => navigation.navigate('MyModal')} title='Ope' />
       <Button
         onPress={() => navigation.navigate('Details')}
-        title='Details Screen'
+        title='Details Screeeennn'
       />
     </View>
   )
@@ -56,7 +54,7 @@ const RootStack = createStackNavigator()
 function MainStackScreen() {
   return (
     <MainStack.Navigator>
-      <MainStack.Screen name='Home' component={HomeScreen} />
+      <MainStack.Screen name='homeScreen' component={homeScreen} />
       <MainStack.Screen name='Details' component={DetailsScreen} />
     </MainStack.Navigator>
   )
