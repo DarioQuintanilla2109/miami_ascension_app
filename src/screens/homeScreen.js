@@ -1,12 +1,24 @@
 import React from 'react'
-import { View, Button, Text } from 'react-native'
+import { View, Button, Text, StyleSheet } from 'react-native'
+import DT from '../../darkTheme'
 
-function homeScreen() {
+function HomeScreen({ navigation }) {
+  const MyDarkTheme = DT()
+
   return (
-    <View>
-      <Text> home sceen</Text>
+    <View style={{ flex: 1, marginTop: 40 }}>
+      <Text style={{ color: MyDarkTheme.colors.text }}> home sceen</Text>
+      <Button
+        title='Go to details view'
+        onPress={() =>
+          navigation.navigate('Root', {
+            screen: 'MoreDetails',
+            params: { user: 'jane' },
+          })
+        }
+      />
     </View>
   )
 }
 
-export default homeScreen
+export default HomeScreen
