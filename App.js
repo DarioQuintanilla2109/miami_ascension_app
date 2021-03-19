@@ -34,7 +34,7 @@ function App() {
 
   return (
     <NavigationContainer theme={scheme === 'dark' ? MyDarkTheme : DefaultTheme}>
-      <Drawer.Navigator>
+      <Drawer.Navigator drawerContent={props => <Home {...props} />}>
         <Drawer.Screen name='Root' component={Root} />
         <Drawer.Screen name='Home' component={Home} />
       </Drawer.Navigator>
