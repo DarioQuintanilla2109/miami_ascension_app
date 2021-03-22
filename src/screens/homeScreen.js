@@ -40,7 +40,20 @@ function HomeScreen({ navigation, props }) {
                 <Icon name='home-outline' color={color} size={size} />
               )}
               label='Home'
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate('Root')
+              }}
+            />
+          </Drawer.Section>
+          <Drawer.Section style={styles.drawerSection}>
+            <DrawerItem
+              icon={({ color, size }) => (
+                <Icon name='information-variant' color={color} size={size} />
+              )}
+              label='About'
+              onPress={() => {
+                navigation.navigate('About')
+              }}
             />
           </Drawer.Section>
 

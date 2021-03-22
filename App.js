@@ -10,7 +10,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import { AppearanceProvider, useColorScheme } from 'react-native-appearance'
 import DT from './darkTheme'
 import LT from './lightTheme'
-import HomeScreen from './src/screens/HomeScreen'
 import AboutScreen from './src/screens/AboutScreen'
 import DetailsView from './src/screens/DetailsView'
 import MoreDetails from './src/screens/MoreDetails'
@@ -21,8 +20,14 @@ const Stack = createStackNavigator()
 
 function Root() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name='DetailsView' component={DetailsView} />
+    <Stack.Navigator header>
+      <Stack.Screen
+        options={{
+          headerShown: false,
+        }}
+        name='DetailsView'
+        component={DetailsView}
+      />
       <Stack.Screen name='MoreDetails' component={MoreDetails} />
     </Stack.Navigator>
   )
@@ -36,7 +41,7 @@ function App() {
     <NavigationContainer theme={scheme === 'dark' ? MyDarkTheme : DefaultTheme}>
       <Drawer.Navigator drawerContent={props => <Home {...props} />}>
         <Drawer.Screen name='Root' component={Root} />
-        <Drawer.Screen name='Home' component={Home} />
+        <Drawer.Screen name='About' component={AboutScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   )

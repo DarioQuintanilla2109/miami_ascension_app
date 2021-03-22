@@ -6,7 +6,7 @@ function MoreDetails({ navigation }) {
   const MyDarkTheme = DT()
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, marginTop: 90 }}>
       <Text style={{ color: MyDarkTheme.colors.text }}> More</Text>
       <Button
         title='Go to details view'
