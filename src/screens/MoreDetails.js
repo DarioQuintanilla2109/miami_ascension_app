@@ -27,8 +27,8 @@ function MoreDetails({ navigation }) {
           <View style={styles.itemContainer}>
             <Image
               style={{
-                width: 400,
-                height: 400,
+                width: 40,
+                height: 40,
                 borderRadius: 10,
               }}
               source={item.image}
@@ -42,13 +42,14 @@ function MoreDetails({ navigation }) {
 
 const styles = StyleSheet.create({
   gridView: {
-    marginTop: 40,
+    marginTop: 10,
     flex: 1,
   },
   itemContainer: {
-    paddingLeft: 0,
-    paddingEnd: 20,
+    justifyContent: 'flex-end',
+    borderRadius: 5,
+    padding: 10,
+    height: 150,
   },
 })
-
 export default MoreDetails

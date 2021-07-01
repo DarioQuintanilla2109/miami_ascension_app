@@ -14,6 +14,7 @@ import AboutScreen from './src/screens/AboutScreen'
 import DetailsView from './src/screens/DetailsView'
 import MoreDetails from './src/screens/MoreDetails'
 import Home from './src/screens/HomeScreen'
+import AuthNavigator from './navigators/AuthNavigator'
 
 const Drawer = createDrawerNavigator()
 const Stack = createStackNavigator()
@@ -39,10 +40,7 @@ function App() {
 
   return (
     <NavigationContainer theme={scheme === 'dark' ? MyDarkTheme : DefaultTheme}>
-      <Drawer.Navigator drawerContent={props => <Home {...props} />}>
-        <Drawer.Screen name='Root' component={Root} />
-        <Drawer.Screen name='About' component={AboutScreen} />
-      </Drawer.Navigator>
+      <AuthNavigator />
     </NavigationContainer>
   )
 }
