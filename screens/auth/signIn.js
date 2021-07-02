@@ -52,22 +52,23 @@ function signIn({ navigation }) {
 
             <Button
               style={{
-                alignItems: 'center',
                 marginTop: heightPercentageToDP(1),
                 color: '#000023',
+                alignSelf: 'center',
+                width: '50%',
               }}
               buttonStyle={{
-                width: '90%',
                 borderRadius: 100,
                 margin: 'auto',
                 backgroundColor: 'white',
-                textAlign: 'center',
                 height: 50,
                 borderColor: '#000023',
                 borderWidth: 1,
+                textAlign: 'center',
               }}
               titleStyle={{
                 color: '#000023',
+                textAlign: 'center',
               }}
               containerStyle={{
                 borderColor: '#000023',
@@ -81,7 +82,7 @@ function signIn({ navigation }) {
             >
               <Text style={styles.text}>
                 Dont have an account?
-                <Text style={{ color: '#075264' }}> Sign up</Text>
+                <Text style={{ color: '#075264' }}> Sign Up</Text>
               </Text>
             </TouchableOpacity>
           </View>
@@ -117,6 +118,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     width: '90%',
     alignSelf: 'center',
+    marginBottom: heightPercentageToDP(5),
   },
   view: {
     marginTop: heightPercentageToDP(20),

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,71 +23,75 @@ const DissMissKeyboard = ({ children }) => (
 function signUp({ navigation }) {
   const [email, onChangeEmail] = useState('')
   const [password, onPassword] = useState('')
-  return (
-    <ImageBackground
-      source={signUpBeach}
-      style={{
-        width: widthPercentageToDP(100),
-        height: heightPercentageToDP(100),
-        resizeMode: 'contain',
-      }}
-    >
-      <DissMissKeyboard>
-        <SafeAreaView style={{ flex: 1 }}>
-          <View style={styles.view}>
-            <TextInput
-              style={styles.input}
-              onChangeText={onChangeEmail}
-              value={email}
-              placeholder='Email'
-              placeholderTextColor='rgba(255,255,255, .7)'
-            ></TextInput>
-            <TextInput
-              style={styles.password}
-              onChangeText={onPassword}
-              value={password}
-              placeholder='Password'
-              placeholderTextColor='rgba(255,255,255, .7)'
-            ></TextInput>
 
-            <Button
-              style={{
-                alignItems: 'center',
-                marginTop: heightPercentageToDP(1),
-                color: '#000023',
-              }}
-              buttonStyle={{
-                width: '90%',
-                borderRadius: 100,
-                margin: 'auto',
-                backgroundColor: 'white',
-                textAlign: 'center',
-                height: 50,
-                borderColor: '#000023',
-                borderWidth: 1,
-              }}
-              titleStyle={{
-                color: '#000023',
-              }}
-              containerStyle={{
-                borderColor: '#000023',
-              }}
-              rasied
-              title='Sign Up'
-            />
-            <TouchableOpacity
-              onPress={() => navigation.navigate('signIn')}
-              style={{ marginTop: heightPercentageToDP(2) }}
-            >
-              <Text style={styles.text}>
-                Already have an
-                <Text style={{ color: '#075264' }}> account?</Text>
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </SafeAreaView>
-      </DissMissKeyboard>
-    </ImageBackground>
+  return (
+    <View>
+      <ImageBackground
+        source={signUpBeach}
+        style={{
+          width: widthPercentageToDP(100),
+          height: heightPercentageToDP(100),
+          resizeMode: 'contain',
+        }}
+      >
+        <DissMissKeyboard>
+          <SafeAreaView style={{ flex: 1 }}>
+            <View style={styles.view}>
+              <TextInput
+                style={styles.input}
+                onChangeText={onChangeEmail}
+                value={email}
+                placeholder='Email'
+                placeholderTextColor='rgba(255,255,255, .7)'
+              ></TextInput>
+              <TextInput
+                style={styles.password}
+                onChangeText={onPassword}
+                value={password}
+                placeholder='Password'
+                placeholderTextColor='rgba(255,255,255, .7)'
+              ></TextInput>
+
+              <Button
+                style={{
+                  marginTop: heightPercentageToDP(1),
+                  color: '#000023',
+                  alignSelf: 'center',
+                  width: '50%',
+                }}
+                buttonStyle={{
+                  borderRadius: 100,
+                  margin: 'auto',
+                  backgroundColor: 'white',
+                  height: 50,
+                  borderColor: '#000023',
+                  borderWidth: 1,
+                  textAlign: 'center',
+                }}
+                titleStyle={{
+                  color: '#000023',
+                  textAlign: 'center',
+                }}
+                containerStyle={{
+                  borderColor: '#000023',
+                }}
+                rasied
+                title='Sign Up'
+              />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('signIn')}
+                style={{ marginTop: heightPercentageToDP(2) }}
+              >
+                <Text style={styles.text}>
+                  Already have an
+                  <Text style={{ color: '#075264' }}> account?</Text>
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </SafeAreaView>
+        </DissMissKeyboard>
+      </ImageBackground>
+    </View>
   )
 }
 
@@ -117,6 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     width: '90%',
     alignSelf: 'center',
+    marginBottom: heightPercentageToDP(5),
   },
   view: {
     marginTop: heightPercentageToDP(20),
