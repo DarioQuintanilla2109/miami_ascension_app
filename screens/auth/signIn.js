@@ -51,6 +51,9 @@ function signIn({ navigation }) {
             ></TextInput>
 
             <Button
+              onPress={() =>
+                navigation.navigate('HomeStackNavigator', { screen: 'home' })
+              }
               style={{
                 marginTop: heightPercentageToDP(1),
                 color: '#000023',

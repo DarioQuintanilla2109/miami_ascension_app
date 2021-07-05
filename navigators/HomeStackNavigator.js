@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
+import home from '../screens/home/home'
 
 const HomeStack = createStackNavigator()
 
